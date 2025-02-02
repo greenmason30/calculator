@@ -70,7 +70,7 @@ function updateDisplay(num) {
     if (num.length > MAX_DISPLAY_LEN) {
         num = num.substr(-MAX_DISPLAY_LEN);
     }
-    display.innerHTML = num;
+    display.innerHTML = num ? num : '0';
 }
 
 function resetCalc() {
@@ -166,6 +166,16 @@ function keyClicked(e) {
     }
     else if (e.key === "Escape") {
         resetCalc();
+    }
+    else if (e.key === "Backspace") {
+        if (currNum === 0) {
+            num0 = num0.slice(0, -1);
+            updateDisplay(num0);
+        }
+        else {
+            num1 = num1.slice(0, -1)
+            updateDisplay(num1);
+        }
     }
     else if (["Enter", "="].includes(e.key)) {
         equalsSelected();
