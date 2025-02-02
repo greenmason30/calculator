@@ -13,28 +13,32 @@ body {
     align-items: center;
 }
 
-.display, .calc {
-    border-radius: 10px;
-}
-
-.display {
-    height: 20%;
-    border: solid;
-    background-color: rgb(211, 225, 226);
-    border-color: rgb(121, 121, 130);
-    border-width: 5px;
-    /* background-color: gray; */
-}
-
 .calc {
     display: flex;
     flex-direction: column;
     height: 380px;
     width: 300px;
     padding: 15px;
-    gap: 5px;
+    gap: 10px;
     background-color: rgb(63, 98, 219);
     
+}
+
+.display {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 3.3em;
+    height: 20%;
+    padding: 10px;
+    border: solid;
+    background-color: rgb(211, 225, 226);
+    border-color: rgb(121, 121, 130);
+    border-width: 5px;
+}
+
+.display, .calc {
+    border-radius: 20px;
 }
 
 .buttons {
@@ -47,8 +51,17 @@ button {
     background-color: rgb(227, 227, 227);
     color: rgb(30, 43, 178);
     border-radius: 60px;
-    /* width: 30px; */
+    font-size: 1.4em;
+    font-weight: bolder;
+    border-style: none;
+}
 
+button:hover {
+    filter: brightness(90%);
+}
+
+button:active, .operator:focus {
+    filter: brightness(50%);
 }
 
 .red {
